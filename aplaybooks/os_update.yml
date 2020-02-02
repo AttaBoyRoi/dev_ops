@@ -1,1 +1,6 @@
-
+- name: Patch OS playbook
+  hosts: all
+  tasks:
+    - name: Patching Ubuntu Server
+      debug:
+        msg: "Patched Ubuntu Server. Now at: {{ ansible_distribution_version }}"
