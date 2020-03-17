@@ -1,0 +1,14 @@
+---
+- name: Create Account
+  hosts: all
+  become: True
+  tasks:
+     
+  - name: Creating user "{{ uusername }}" with admin and sudo access
+    user: 
+      name: {{ uusername }}
+      password: "{{ 'upassword' | password_hash('sha512') }}"
+      groups: admin,sudo append=yes
+      shell: /bin/bash
+  register: {{ uusername }}
+  when: {{ uusername }}.changed
