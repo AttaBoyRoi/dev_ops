@@ -1,0 +1,10 @@
+- name: check if package is installed
+  package:
+    name: htop
+    state: present
+  check_mode: true
+  register: mypackage_check
+
+- name: run script if package installed
+  shell: myscript.sh
+  when: not mypackage_check.changed 
