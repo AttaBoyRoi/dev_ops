@@ -1,5 +1,5 @@
 ---
-- ping as {{ uusername }}
+- name: ping as "{{ uusername }}"
 - hosts: all
   remote_user: "{{ uusername }}"
   tasks:
