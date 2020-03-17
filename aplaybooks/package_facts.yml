@@ -1,3 +1,8 @@
+- name: package facts
+  hosts: all
+  become: true
+  tasks:
+
 - name: Gather package facts
   package_facts:
     manager: auto
