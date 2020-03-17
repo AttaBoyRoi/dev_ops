@@ -1,0 +1,13 @@
+- name: Gather package facts
+  package_facts:
+    manager: auto
+
+- name: Debug if package is present
+  debug:
+    msg: 'yes, mypackage is present'
+  when: '"nano" in ansible_facts.packages'
+
+- name: Debug if package is absent
+  debug:
+    msg: 'no, mypackage is absent'
+  when: '"nano" not in ansible_facts.packages'
