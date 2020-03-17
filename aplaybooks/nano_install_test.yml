@@ -1,13 +1,14 @@
+---
 - name: "Check if nano is installed"
   package_facts:
     manager: "auto"
     
-- name: "nano test result"
-  debug: 
-    msg: "nano found"
-  when: "'nano' in ansible_facts.packages"
+  - name: "nano test result"
+    debug: 
+      msg: "nano found"
+    when: "'nano' in ansible_facts.packages"
 
-- name: "nano test result"
-  debug: 
-    msg: "nano NOT found"
-  when: "'nano' not in ansible_facts.packages"
+  - name: "nano test result"
+    debug: 
+      msg: "nano NOT found"
+    when: "'nano' not in ansible_facts.packages"
