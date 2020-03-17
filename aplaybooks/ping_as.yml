@@ -1,0 +1,7 @@
+---
+- ping as {{ uusername }}
+- hosts: all
+  remote_user: "{{ uusername }}"
+  tasks:
+    - name: test connection
+      ping:
