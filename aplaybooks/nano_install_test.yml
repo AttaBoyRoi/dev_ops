@@ -1,6 +1,7 @@
 - name: Nano installed test
   hosts: all
   tasks:
+  become: true
   
 - name: "Check if nano is installed"
   package_facts:
